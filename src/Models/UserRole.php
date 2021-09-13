@@ -1,6 +1,6 @@
 <?php
 
-namespace KLC\Permission\Models;
+namespace KLC\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;

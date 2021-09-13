@@ -1,6 +1,6 @@
 <?php
 
-namespace KLC\Permission\Models;
+namespace KLC\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;

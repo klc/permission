@@ -3,8 +3,6 @@
 namespace KLC\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use KLC\Permission\Models\Permission;
-use KLC\Permission\Models\Role;
 
 class RolePermission extends Model
 {

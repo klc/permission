@@ -2,7 +2,7 @@
 
 namespace KLC;
 
-use KLC\Permission\Models\Role;
+use KLC\Models\Role;
 
 trait PermissionTrait
 {

@@ -3,8 +3,8 @@
 namespace KLC;
 
 use KLC\Models\RolePermission;
-use KLC\Permission\Models\UserRole;
-use KLC\Permission\Models\Permission;
+use KLC\Models\UserRole;
+use KLC\Models\Permission;
 
 class PermissionFromDb extends DataChain
 {

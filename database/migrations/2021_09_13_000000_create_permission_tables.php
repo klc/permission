@@ -40,4 +40,12 @@ class CreatePostsTable extends Migration
             $table->unique('user_id');
         });
     }
+
+    public function down()
+    {
+        Schema::drop('roles');
+        Schema::drop('permissions');
+        Schema::drop('role_permission');
+        Schema::drop('user_role');
+    }
 }
