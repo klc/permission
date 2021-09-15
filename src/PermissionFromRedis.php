@@ -37,6 +37,6 @@ class PermissionFromRedis extends DataChain
 
         self::$client->rename('permissions_temp:'.$params['user_id'], 'permissions:'.$params['user_id']);
 
-        return $result[$params['slug']];
+        return isset($result[$params['slug']]) ? $result[$params['slug']] : 0;
     }
 }

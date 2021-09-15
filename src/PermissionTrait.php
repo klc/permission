@@ -15,7 +15,7 @@ trait PermissionTrait
      * @param string $slug
      * @return bool
      */
-    public function can($slug)
+    public function hasPermission($slug)
     {
         return hasPermission($slug, $this->id);
     }
