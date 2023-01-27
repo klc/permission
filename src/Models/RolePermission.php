@@ -2,23 +2,9 @@
 
 namespace KLC\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-class RolePermission extends Model
+class RolePermission extends Pivot
 {
-    protected $table = 'role_permission';
-    protected $fillable = ['role_id', 'permission_id'];
-    protected $primaryKey = false;
-    public $incrementing = false;
-    public $timestamps = false;
 
-    public function permission()
-    {
-        return $this->belongsTo(Permission::class);
-    }
-
-    public function role()
-    {
-        return $this->belongsTo(Role::class);
-    }
 }

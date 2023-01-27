@@ -6,17 +6,31 @@ use Illuminate\Support\Facades\Auth;
 
 class Permission
 {
-    public static function hasPermission($slug, $userId = 0)
+    public static function hasPermission(string $slug, int $userId = 0)
     {
         if (!$userId) {
-            $userId = \Illuminate\Support\Facades\Auth::user()->id;
+            $userId = Auth::user()->id;
         }
 
-        $memory = new \KLC\PermissionFromMemory();
-        $redis = new \KLC\PermissionFromRedis();
-        $db = new \KLC\PermissionFromDb();
+        $memory = new DataFromMemory();
+        $redis = new DataFromRedis();
+        $db = new DataFromDb();
         $memory->next($redis)->next($db);
 
-        return (bool)$memory->run(['slug' => $slug, 'user_id' => $userId]);
+        return (bool)$memory->run(['slug' => $slug, 'user_id' => $userId, 'type' => 'permission']);
+    }
+
+    public static function hasRole(string $slug, int $userId = 0)
+    {
+        if (!$userId) {
+            $userId = Auth::user()->id;
+        }
+
+        $memory = new DataFromMemory();
+        $redis = new DataFromRedis();
+        $db = new DataFromDb();
+        $memory->next($redis)->next($db);
+
+        return (bool)$memory->run(['slug' => $slug, 'user_id' => $userId, 'type' => 'role']);
     }
 }

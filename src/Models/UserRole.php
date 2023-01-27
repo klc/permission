@@ -3,23 +3,9 @@
 namespace KLC\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 
-/**
- * @property int user_id
- * @property int role_id
- * @mixin Builder
- */
-class UserRole extends Model
+class UserRole extends Pivot
 {
-    protected $table = 'user_role';
-    protected $fillable = ['user_id', 'role_id'];
-    protected $primaryKey = false;
-    public $incrementing = false;
-    public $timestamps = false;
 
-    public function role()
-    {
-        return $this->belongsTo(Role::class);
-    }
 }
