@@ -30,6 +30,6 @@ class Role extends Model
 
     public function users()
     {
-        return $this->belongsToMany(Config::get('auth.providers.users.model'));
+        return $this->belongsToMany(Config::get('auth.providers.users.model'), 'user_role');
     }
 }
